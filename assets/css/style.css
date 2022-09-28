@@ -1,3 +1,8 @@
 body {
-    background-color: aliceblue;
+    background-color: rgb(11, 47, 79);
+}
+
+.snap-x {
+    scroll-snap-type: x var(--tw-scroll-snap-strictness);
+    
 }
