@@ -35,14 +35,6 @@ function setEventInfo(){
 
 }
 
-
-
-
-
-
-
-
-
 // // API for the artist background.
 //  var $btn = document.getElementById("search"); // btn
 // const $inputValEl = document.getElementById(""); // input value
