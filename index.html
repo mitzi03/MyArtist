@@ -12,9 +12,9 @@
 
 <body>
 
-  <!--HEADER WITH VIDEO IMAGE AND TITLE-->
+  <!--HEADER WITH VIDEO-->
       <header>
-        <section id="header styles" class="text-gray-800 background-radial-gradient">
+        <section id="header-styles" class="text-gray-800 background-radial-gradient">
           <style>
               .background-radial-gradient {
                   background-color: hsl(218, 41%, 15%);
@@ -34,24 +34,25 @@
             </style>
             
             <style>
-            .hide-scroll-bar {
-              -ms-overflow-style: none;
-              scrollbar-width: none;
-            }
-            .hide-scroll-bar::-webkit-scrollbar {
-              display: none;
-            }
-            </style>
-            <style>
-            .hide-scroll-bar {
-              -ms-overflow-style: none;
-              scrollbar-width: none;
-            }
-            .hide-scroll-bar::-webkit-scrollbar {
-              display: none;
-            }
+              .hide-scroll-bar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+              }
+              .hide-scroll-bar::-webkit-scrollbar {
+                display: none;
+              }
+              </style>
+              <style>
+              .hide-scroll-bar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+              }
+              .hide-scroll-bar::-webkit-scrollbar {
+                display: none;
+              }
             </style>
 
+          <!--HEADER TEXT-->
           <div class="px-6 py-12 md:px-12 text-center lg:text-left">
             <div class="container mx-auto">
               <div class="grid lg:grid-cols-2 gap-12 flex items-center">
@@ -98,12 +99,11 @@
       </section></div>
     
       <!--SEARCH BAR-->
-    <section id="search-bar-box">
+    <section id="search-bar-box" class="w-16 md:w-32 lg:w-48">
       <section id="search-bar" class="ml-5 mt-5 bg-white m-auto p-auto w-100">
         <div class="">
-          <div class="mb-3">
             <label for="exampleSearch2" class="form-label inline-block mb-2 text-gray-700">Search</label>
-            <input type="search" class="
+            <input id="search-input" type="search
                 form-control
                 block
                 w-full
@@ -117,14 +117,15 @@
                 rounded
                 transition
                 ease-in-out
+                mb-2
                 m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-              " id="search" placeholder="Find your artist">
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
+                id="search" placeholder="Find your artist">
+              <button class="h-10 px-6 font-semibold rounded-md bg-black text-white w-16 md:w-32 lg:w-48" type="submit">Search</button><!--Jake WIP-->
           </div>
-
-
-
-        </div></section><div class="ml-5 bg-white m-auto p-auto">
+      </section>
+      
+      <div class="ml-5 bg-white m-auto p-auto">
          <h1 class="flex py-5 lg:px-20 md:px-10 px-5 lg:mx-40 md:mx-20 mx-5 font-bold text-4xl text-gray-800">
             Trending Artists
           </h1>
@@ -156,6 +157,7 @@
               </div>
             </div>
           </div>
+        </section>
     </div>
 
     <div class="ml-5 bg-white m-auto p-auto">
