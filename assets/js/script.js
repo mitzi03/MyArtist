@@ -22,6 +22,6 @@ var displayArtistBackground = function ($inputValEl) {
       $inputEl.textContent = 'No repositories found.';
       return;
     }
-
+}
 getArtistBackground();
 $btn.addEventListener("click", getArtistBackground);
