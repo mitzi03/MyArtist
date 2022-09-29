@@ -4,20 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MyArtist</title>
     <link href="./assets/css/style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./assets/js/script.js" defer ></script>
+    <script src="./test.js" defer ></script>
 </head>
+
 <body>
 
-<!--this will be where the logo and the MyArtist will go-->
-    <header>
-      <h1>Welcome to MyArtist!</h1>
-      <p>Learn about your favorite artists & where you can find tickets for live events.</p>
-    </header>
+  <!--header with video image and title-->
+      <header>
+        <section class="mb-10 text-gray-800 background-radial-gradient">
+          <style>
+              .background-radial-gradient {
+                  background-color: hsl(218, 41%, 15%);
+                  background-image: radial-gradient(650px circle at 0% 0%,
+                  hsl(218, 41%, 35%) 15%,
+                  hsl(218, 41%, 30%) 35%,
+                  hsl(218, 41%, 20%) 75%,
+                  hsl(218, 41%, 19%) 80%,
+                  transparent 100%),
+                  radial-gradient(1250px circle at 100% 100%,
+                  hsl(218, 41%, 45%) 15%,
+                  hsl(218, 41%, 30%) 35%,
+                  hsl(218, 41%, 20%) 75%,
+                  hsl(218, 41%, 19%) 80%,
+                  transparent 100%);
+                }
+            </style>
+            <style>
+            .hide-scroll-bar {
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+            }
+            .hide-scroll-bar::-webkit-scrollbar {
+              display: none;
+            }
+            </style>
+            <style>
+            .hide-scroll-bar {
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+            }
+            .hide-scroll-bar::-webkit-scrollbar {
+              display: none;
+            }
+            </style>
 
 
+
+          <div class="px-6 py-12 md:px-12 text-center lg:text-left">
+            <div class="container mx-auto">
+              <div class="grid lg:grid-cols-2 gap-12 flex items-center">
+                <div class="mt-12 lg:mt-0">
+                  <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12"
+                    style="color: hsl(218, 81%, 95%)">
+                    Welcome <br /><span style="color: hsl(218, 81%, 75%)">to MyArtist</span>
+                  </h1>
+                  <p class="text-lg" style="color: hsl(218, 81%, 95%)">
+                    Here is where you can find information on your favorite artists, trending events, and more!
+                  </p>
+                </div>
+                <div class="mb-12 lg:mb-0">
+                  <div class="embed-responsive embed-responsive-16by9 relative w-full overflow-hidden rounded-lg shadow-lg"
+                    style="padding-top: 56.25%">
+                    <iframe class="embed-responsive-item absolute top-0 right-0 bottom-0 left-0 w-full h-full"
+                      src="https://www.youtube.com/embed/vlDzYIIOYmM?enablejsapi=1&amp;origin=https%3A%2F%2Fmdbootstrap.com"
+                      allowfullscreen="" data-gtm-yt-inspected-2340190_699="true" id="240632615"></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </header>
+      <!--END OF HEADER-->
 
     <main class="flex bg-white" style="
 ">
@@ -128,25 +189,8 @@
           
         </div>
     </section>
-    <style>
-    .hide-scroll-bar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    .hide-scroll-bar::-webkit-scrollbar {
-      display: none;
-    }
-    </style>
-    <style>
-    .hide-scroll-bar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    .hide-scroll-bar::-webkit-scrollbar {
-      display: none;
-    }
-    </style>
-    
+
     </main>
+  <footer></footer>
 </body>
 </html>
