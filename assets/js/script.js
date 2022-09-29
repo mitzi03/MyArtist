@@ -22,10 +22,10 @@ function getArtistBackground() {
 
 var displayArtistBackground = function ($inputValEl) {
     if ($inputValEl.length === 0) {
-      $inputEl.textContent('') = ;
+      $inputEl.textContent('inputEl') = dlkj;
       return;
     }
-
+}
     for (var i = 0; i < $inputValEl.length; i++) {
         var inputEl = document.createElement('p');
         inputEl.classList = 'flex-row';
@@ -37,4 +37,4 @@ var displayArtistBackground = function ($inputValEl) {
 
 
 getArtistBackground();
-$btn.addEventListener("click", getArtistBackground);
+$btn.addEventListener("click", getArtistBackground());
