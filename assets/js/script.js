@@ -3,6 +3,9 @@
 const $inputValEl = document.getElementById("search-input"); // input value
 const $inputEl = document.getElementById("") // where the artist background page will load 
 
+
+
+
 function getArtistBackground() {
     let $artistBackgroundAPI =
       `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${$inputValEl}&api_key=c530cc7409dd0b36d399647084a9eae3&format=json`
@@ -17,6 +20,35 @@ function getArtistBackground() {
   });
 }
 
+var displayArtistBackground = function ($inputValEl) {
+    if ($inputValEl.length === 0) {
+      $inputEl.textContent('$inputEl') = $inputValEl;
+      return;
+    }
+}
+    for (var i = 0; i < $inputValEl.length; i++) {
+        var inputEl = document.createElement('p');
+        $inputEl.classList = 'flex-row';
+        $inputEl.setAttribute('href', issues[i].html_url);
+        $inputEl.setAttribute('target', '_blank');
+        $inputEl.appendChild($inputValEl);
+
+        if ($inputValEl[i].pull_request) {
+            $inputEl.textContent = '(Pull request)';
+        }   else {
+            $inputEl.textContent = '(Issue)';
+        }
+
+        inputEl.appendChild($inputValEl);
+
+
+        console.log(displayArtistBackground);
+}
+
+
+
+getArtistBackground();
+$btn.addEventListener("click", getArtistBackground());
 getArtistBackground();
 $btn.addEventListener("click", getArtistBackground);
 
