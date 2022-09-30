@@ -11,9 +11,9 @@
   <script src="./test.js" defer></script>
 </head>
 
+<!--BEGINNING OF BODY-->
 <body>
-
-  <!--HEADER WITH VIDEO-->
+  <!--START OF HEADER WITH VIDEO-->
   <header>
     <section id="header styles" class="text-gray-800 background-radial-gradient">
       <style>
@@ -34,6 +34,7 @@
         }
       </style>
 
+      <!--SCROLL STYLES-->
       <style>
         .hide-scroll-bar {
           -ms-overflow-style: none;
@@ -54,28 +55,20 @@
           display: none;
         }
       </style>
+      <!--END SCROLL STYLES-->
+
+
 
       <!--HEADER TEXT-->
-      <div class="px-6 py-12 md:px-12 text-center lg:text-left">
-        <div class="container mx-auto">
-          <div class="grid lg:grid-cols-2 gap-12 flex items-center">
-            <div class="mt-12 lg:mt-0">
-              <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12"
-                style="color: hsl(218, 81%, 95%)">
-                SECOND <br /><span style="color: hsl(218, 81%, 75%)">Page</span>
-              </h1>
-              <p class="text-lg" style="color: hsl(218, 81%, 95%)">
-                Here is what you want.
-              </p>
-            </div>
-            <div class="mb-12 lg:mb-0">
-              <div class="embed-responsive embed-responsive-16by9 relative w-full overflow-hidden rounded-lg shadow-lg"
-                style="padding-top: 56.25%">
-                <iframe class="embed-responsive-item absolute top-0 right-0 bottom-0 left-0 w-full h-full"
-                  src="https://www.youtube.com/embed/vlDzYIIOYmM?enablejsapi=1&amp;origin=https%3A%2F%2Fmdbootstrap.com"
-                  allowfullscreen="" data-gtm-yt-inspected-2340190_699="true" id="240632615"></iframe>
-              </div>
-            </div>
+    <section id="header">
+      <div class="px-6 py-12 md:px-12 text-center lg:text-left containter mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 flex items-center">
+          <div class="mt-12 lg:mt-0">
+            <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight mb-12"
+              style="color: hsl(218, 81%, 95%)">
+              <!--Fix padding here-->Meet<br /><span style="color: hsl(218, 81%, 75%)">Your Artist</span>
+            </h1>
+              <p class="text-lg" style="color: hsl(218, 81%, 95%)"></p>
           </div>
         </div>
       </div>
@@ -83,20 +76,23 @@
   </header>
   <!--END OF HEADER-->
 
-  <main class="flex bg-white" style="
-">
-    <div id="artist-stuff">
+  <!--BEGINNING OF MAIN-->
+<main class="flex bg-white" 
+style="">
+      <div id="nav-things">
       <div class="bg-gray-100 shadow-md px-1" style="
-/* height: 100%; */">
+  /* height: 100%; */">
+
+  <!--START NAV BAR-->
         <section id="navbar">
           <ul class="relative">
             <li class="relative">
               <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out nav-link smooth-scroll"
-                href="#search!" data-mdb-ripple="true" data-mdb-ripple-color="dark">Home</a>
+                href="#artist-bio" data-mdb-ripple="true" data-mdb-ripple-color="dark">Home</a>
             </li>
             <li class="relative">
               <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out nav-link smooth-scroll"
-                href="#artists" data-mdb-ripple="true" data-mdb-ripple-color="dark">Artist Details</a>
+                href="#artist-details" data-mdb-ripple="true" data-mdb-ripple-color="dark">Artist Details</a>
             </li>
             <li class="relative">
               <a class="flex items-center text-sm py-4 px-6 h-12 overflow-hidden text-gray-700 text-ellipsis whitespace-nowrap rounded hover:text-gray-900 hover:bg-gray-100 transition duration-300 ease-in-out nav-link smooth-scroll"
@@ -105,89 +101,85 @@
           </ul>
         </section>
       </div>
-    </div id="artist-stuff">
+    </div id=nav-things">
+<!--END NAV BAR-->
 
-
-    <div id="artist image">
-      <div class="flex justify-between">
-        <div
-          class="box-border p-4 border-4 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-          <div class="md:flex">
-            <!-- <div class="md:shrink-0">
-                    <img class="h-48 w-full object-cover md:h-full md:w-48" src="/img/building.jpg" alt="Modern building architecture">
-                </div> -->
-            <div class="p-8">
-              <div class="tracking-wide text-sm text-indigo-500 font-semibold">
-                <p id="artist-name">
-                  Artist Name will go here.
-                </p>
-                <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Subtitle of
-                  Artist</a>
-                <p class="mt-2 text-slate-500" id="artist-details">
-                  Artist details will go here.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div id="artist-image">
-
-
-        <div
-          class="box-border p-4 border-4 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-          <div class="md:flex">
-            <div class="p-8">
-              <div class="tracking-wide text-sm text-indigo-500 font-semibold">
-                <p id="artist-name">
-                  Artist Image
-                </p>
-                <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Subtitle of
-                  Artist</a>
-                <p class="mt-2 text-slate-500" id="artist-details">
-                  Artist details will go here.
-                </p>
-                <div class="md:shrink-0">
-                  <img class="h-48 w-full object-cover md:h-full md:w-48" src="/img/building.jpg" alt="Image of Artist">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!--ARTIST DETAILS (TOP LEFT BOX)-->
-          <section id="artist-info">
-            <div id="background-box">
-              <h2 id="artist-name"></h2>
-              <p id="artist-details">
+<div class="grid grid-rows-2 grid-flow-col gap-4"
+    <section id="artist-info">
+      <div id="artist-bio-div"
+        class="box-border p-4 border-4 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div class="md:flex">
+          <div class="p-8">
+            <div class="tracking-wide text-sm text-indigo-500 font-semibold>
+                  <p id=" tm">
+              <a href="#"
+                class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Artist Name</a></p>
+              <p class="mt-2 text-slate-500" id="artist-details"></p>
+              <p id="venue" class="mt-2 text-slate-500">Artist Bio</p><br>
+              <p id="date" class="mt-2 text-slate-500">Artist Recent Release</p><br>
               </p>
             </div>
-
-            <!--ARTIST DETAILS (RIGHT BOX)-->
-            <div id="image-artist-link">
-              <img id="artist-img"></img>
-              <a id="artist-weblink"></a>
-            </div>
-          </section>
-
-
-
-          <!-- EVENT DETAILS (LEFT BOX)
-    <section id="event-info">
-        <div id="upcoming-events">
-            <h2>Upcoming Events</h2>
-            <ul> 
-                <li="event-1"></li>
-                <li="event-2"></li>
-                <li="event-3"></li>
-            </ul>
-        </div> 
-    END OF EVENT DETAILS
-
-
-        TICKETMASTER IMAGE (RIGHT BOX)
-        <div id="ticketmaster-img"> 
-            <img id="ticketmaster">brittadd.img</img>
+          </div>
         </div>
     </section>
 
-    <footer></footer>
-  </body>
-  </html>
+    <section id="artist-img">
+    <div id="artist-image"
+      class="box-border p-4 border-4 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+      <div class="md:flex">
+        <div class="p-8">
+          <div class="tracking-wide text-sm text-indigo-500 font-semibold>
+              <p id=" artist-image">
+            <!--Artist Image</p>-->
+            <a href="#" class="block mt-1 text-lg leading-tight font-medium text-black hover:underline id="
+              artist-name">Image of Artist</a></p><br>
+            <!-- <div class="md:shrink-0"> -->
+            <img class="mt-2" src="/img/building.jpg" alt="Image of Artist">
+            <!-- <img class="object-contain h-48 w-full object-cover md:h-full md:w-48" src="/img/building.jpg" alt="Image of Artist"> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    </div>
+
+    <!--TICKETMASTER START-->
+    <section id="ticketmaster">
+      <div id="ticket-master"
+        class="box-border p-4 border-4 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div class="md:flex">
+          <div class="p-8">
+            <div class="tracking-wide text-sm text-indigo-500 font-semibold>
+              <p id=" tm">
+              <a href="#" 
+              class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Ticketmaster</a></p>
+                  <p class="mt-2 text-slate-500" id="artist-details">
+                  <p id="venue" class="mt-2 text-slate-500">Venue</p><br>
+                  <p id="date" class="mt-2 text-slate-500">Date</p><br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--END TICKETMASTER EVENTS-->
+
+    <!--START TICKETMASTER IMAGE-->
+    <section id="ticketmaster-img">
+      <div id="ticketmaster"
+      class="box-border p-4 border-4 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div class="md:flex">
+          <div class="p-8">
+            <div class="tracking-wide text-sm text-indigo-500 font-semibold>
+                    <p id=" ticketmaster-image">
+                <a href="#" 
+                class="block mt-1 text-lg leading-tight font-medium text-black hover:underline id=" ticketmaster-link">Buy Your Tickets</a></p><br>
+              <img class="flex-1" src="ticketmaster.jpeg" alt="Image of Ticketmaster">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+    <!--END TICKETMASTER IMAGE-->
