@@ -4,6 +4,10 @@ let eventName;
 let date;
 let venue;
 let searchArray=[];
+// API for the artist background.
+ var $btn = document.getElementById("search"); // btn
+const $inputValEl = document.getElementById("search-input"); // input value
+const $inputEl = document.getElementById("") // where the artist background page will load 
 
 document.getElementById('searchBtn').addEventListener('click', openWindow);
 function openWindow(searchBtn){
@@ -63,3 +67,21 @@ function setEventInfo(){
 
 // getArtistBackground();
 // $btn.addEventListener("click", getArtistBackground);
+getArtistBackground();
+$btn.addEventListener("click", getArtistBackground);
+
+
+// /THIS IS SO WE CAN DO THE HAMBURGER MENU MAYBE//
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("toggle-navbar").addEventListener("click", () => {
+    const element = document.getElementById("nav-items");
+    if (element.classList.contains("block")) {
+      element.classList.remove("block");
+      element.classList.add("hidden");
+    } else {
+      element.classList.remove("hidden");
+      element.classList.add("block");
+    }
+  });
+});
+//ABOVE IS HAMBURGER MENU
