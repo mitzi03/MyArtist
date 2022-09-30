@@ -1,16 +1,17 @@
 // Trev Code
-const trendname = document.querySelectorAll(".trendname");
+const trendname = document.querySelectorAll(".trendEvents");
 // const $search = document.querySelector("#search").value;
 function trendingArtist() {
   fetch(
-    "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.artists.get?q_artist=prodigy&page_size=5&apikey=bd82708062a53880d8766141cccacee6"
+    "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.artists.get?country=US&page_size=5&apikey=bd82708062a53880d8766141cccacee6"
   )
     .then((response) => response.json())
     .then(function (data) {
       console.log(data);
       for (var i = 0; i < 5; i++) {
-        trendname[i].textContent = data;
-        console.log(data);
+        trendname[i].innerHTML =
+          data.message.body.artist_list[i].artist.artist_name;
+        console.log(data.message.body.artist_list[i].artist.artist_name);
       }
     })
     .catch(function (err) {
