@@ -1,18 +1,35 @@
 // Trev Code
 const trendname = document.querySelectorAll(".trendArt");
+
 // const $search = document.querySelector("#search").value;
-function trendingArtist() {
-  fetch(
+ function trendingArtist() {
+   fetch(
     "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.artists.get?country=US&page_size=5&apikey=bd82708062a53880d8766141cccacee6"
   )
     .then((response) => response.json())
     .then(function (data) {
       console.log(data);
       for (var i = 0; i < 5; i++) {
-        trendname[i].innerHTML =
-          data.message.body.artist_list[i].artist.artist_name;
-        console.log(data.message.body.artist_list[i].artist.artist_name);
-      }
+        let index = i;
+          const artistName = data.message.body.artist_list[i].artist.artist_name;
+          const artistId = data.message.body.artist_list[i].artist.artist_id;
+          let topAlbum=`<h3  style="font-size: 25px; text-align: center; padding: 5px; font-weight: 500;font-family: monospace;">${artistName}</h3><br>`;
+          fetch(
+              `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=${artistId}&page_size=1&apikey=bd82708062a53880d8766141cccacee6`
+              ).then((response) => response.json()).then(function (data) {
+                  console.log(data);
+                  topAlbum += `<br><div style=""><h4>${data.message.body.album_list[0].album.album_name}</h4> `;
+                  topAlbum += `<br ><h4 style="font-family: fangsong;
+                  background: green;
+                  text-align: center;
+                  font-weight: 600;
+                  color: white;">${data.message.body.album_list[0].album.album_rating}</h4><br>`;
+                  topAlbum += `<h4>${data.message.body.album_list[0].album.album_release_date}</h4></div>`
+                
+                  trendname[index].setAttribute("style","display:block; justify-content:center;")
+                  trendname[index].innerHTML = topAlbum;
+                });
+                }
     })
     .catch(function (err) {
       console.log(err);
