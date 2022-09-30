@@ -3,22 +3,21 @@ const ticketMasterKey = 'oLCyT4thVDHoA3TZaUi4qbtkL1zuG8kn';
 let eventName;
 let date;
 let venue;
+let searchTerm;
+let searchBtn=document.getElementById('searchBtn');
+let searchInput = document.getElementById('search-input');
 let searchArray=[];
+searchArray=document.getElementById('searchBtn');
 // API for the artist background.
- var $btn = document.getElementById("search"); // btn
-const $inputValEl = document.getElementById("search-input"); // input value
-const $inputEl = document.getElementById("") // where the artist background page will load 
-
-document.getElementById('searchBtn').addEventListener('click', openWindow);
-function openWindow(searchBtn){
-  window.open("about.html")
+//  var $btn = document.getElementById("search"); // btn
+// const $inputValEl = document.getElementById("search-input"); // input value
+// const $inputEl = document.getElementById("") // where the artist background page will load 
+searchBtn.addEventListener('click', addSearchToLocalStorage);
+function addSearchToLocalStorage(searchInput){
+  searchArray.push(searchInput);
+  localStorage.setItem('searchArray', JSON.stringify(searchArray));
 }
-//for the home link take you back to home page
-// document.getElementById('').addEventListener('click', openWindowHome);
-// function openWindowHome(searchBtn){
-//   window.open("index.html")
-// }
-
+console.log(searchArray);
 function getEventInfo(){
     fetch(`https://app.ticketmaster.com/discovery/v2/events.json?&classificationName=concert,music&sort=onSaleStartDate,asc&apikey=${ticketMasterKey}`)
     .then((res) =>{
