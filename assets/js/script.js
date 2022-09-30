@@ -22,16 +22,27 @@ function getArtistBackground() {
 
 var displayArtistBackground = function ($inputValEl) {
     if ($inputValEl.length === 0) {
-      $inputEl.textContent('inputEl') = dlkj;
+      $inputEl.textContent('$inputEl') = $inputValEl;
       return;
     }
 }
     for (var i = 0; i < $inputValEl.length; i++) {
         var inputEl = document.createElement('p');
-        inputEl.classList = 'flex-row';
-        inputEl.setAttribute('href', issues[i].html_url);
-        inputEl.setAttribute('target', '_blank');
+        $inputEl.classList = 'flex-row';
+        $inputEl.setAttribute('href', issues[i].html_url);
+        $inputEl.setAttribute('target', '_blank');
+        $inputEl.appendChild($inputValEl);
 
+        if ($inputValEl[i].pull_request) {
+            $inputEl.textContent = '(Pull request)';
+        }   else {
+            $inputEl.textContent = '(Issue)';
+        }
+
+        inputEl.appendChild($inputValEl);
+
+
+        console.log(displayArtistBackground);
 }
 
 
