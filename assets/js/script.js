@@ -1,26 +1,28 @@
 // Trev Code
 const trendname = document.querySelectorAll(".trendname");
 // const $search = document.querySelector("#search").value;
-fetch(
-  "http://api.musixmatch.com/ws/1.1/chart.artists.get?country=US&page_size=10&apikey=bd82708062a53880d8766141cccacee6"
-)
-  .then((response) => response.json())
-  .then(function (data) {
-    console.log(data);
-    for (var i = 0; i < 5; i++) {
-      trendname[i].textContent =
-        data.message.body.artist_list[i].artist.artist_name;
-    }
-  })
-  .catch(function (err) {
-    console.log(err);
-  });
-
+function trendingArtist() {
+  fetch(
+    "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.artists.get?q_artist=prodigy&page_size=5&apikey=bd82708062a53880d8766141cccacee6"
+  )
+    .then((response) => response.json())
+    .then(function (data) {
+      console.log(data);
+      for (var i = 0; i < 5; i++) {
+        trendname[i].textContent = data;
+        console.log(data);
+      }
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+}
+trendingArtist();
 // trev code
 
 // API for the artist background.
 var $btn = document.getElementById("search"); // btn
-const $inputValEl = document.getElementById(""); // input value
+const $inputValEl = document.getElementById("search-input"); // input value
 const $inputEl = document.getElementById(""); // where the artist background page will load
 
 function getArtistBackground() {
@@ -36,13 +38,20 @@ function getArtistBackground() {
     });
 }
 
-var displayArtistBackground = function ($inputValEl) {
-  if ($inputValEl.length === 0) {
-    $inputEl.textContent = "No repositories found.";
-    return;
-  }
-};
+getArtistBackground();
+$btn.addEventListener("click", getArtistBackground);
 
-// getArtistBackground();
-
-// $btn.addEventListener("click", getArtistBackground);
+// // /THIS IS SO WE CAN DO THE HAMBURGER MENU MAYBE//
+// document.addEventListener("DOMContentLoaded", () => {
+//   document.getElementById("toggle-navbar").addEventListener("click", () => {
+//     const element = document.getElementById("nav-items");
+//     if (element.classList.contains("block")) {
+//       element.classList.remove("block");
+//       element.classList.add("hidden");
+//     } else {
+//       element.classList.remove("hidden");
+//       element.classList.add("block");
+//     }
+//   });
+// });
+// //ABOVE IS HAMBURGER MENU
