@@ -7,10 +7,13 @@
     <title>MyArtist</title>
     <link href="./assets/css/style.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./test.js" defer ></script>
+    <script defer src="./assets/js/script.js"  ></script>
 </head>
 
 <body>
+  <header></header>
+  <main></main>
+  <footer></footer>
 
   <!--HEADER WITH VIDEO-->
       <header>
@@ -100,7 +103,7 @@
     
       <!--SEARCH BAR-->
     <section id="search-bar-box" class="w-16 md:w-32 lg:w-48">
-      <section id="search-bar" class="ml-5 mt-5 bg-white m-auto p-auto w-100">
+      <section  class="ml-5 mt-5 bg-white m-auto p-auto w-100">
         <div class="">
             <label for="exampleSearch2" class="form-label inline-block mb-2 text-gray-700">Search</label>
             <input id="search-input" type="search
@@ -121,7 +124,7 @@
                 m-0
                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" 
                 id="search" placeholder="Find your artist">
-              <button class="h-10 px-6 font-semibold rounded-md bg-black text-white w-16 md:w-32 lg:w-48" type="submit">Search</button><!--Jake WIP-->
+              <button onClick="location.href='./assets/about.html'" class="h-10 px-6 font-semibold rounded-md bg-black text-white w-16 md:w-32 lg:w-48" type="submit">Search</button><!--Jake WIP-->
           </div>
       </section>
       
@@ -167,27 +170,27 @@
           <div class="flex overflow-x-scroll pb-10 hide-scroll-bar">
             <div class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 ">
               <div class="inline-block px-3">
+                <div id="event1" class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
+              </div>
+              <div id="event2" class="inline-block px-3">
                 <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
               </div>
               <div class="inline-block px-3">
-                <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
+                <div id="event3" class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
               </div>
               <div class="inline-block px-3">
-                <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
+                <div id="event4" class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
               </div>
               <div class="inline-block px-3">
-                <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
+                <div id="event5" class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
               </div>
               <div class="inline-block px-3">
-                <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
+                <div id="event6" class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
               </div>
               <div class="inline-block px-3">
-                <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
+                <div id="event7" class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
               </div>
-              <div class="inline-block px-3">
-                <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
-              </div>
-              <div class="inline-block px-3">
+              <div id="event8" class="inline-block px-3">
                 <div class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"></div>
               </div>
             </div>
