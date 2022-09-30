@@ -41,9 +41,7 @@ function getEventInfo(){
           date7 = data._embedded.events[6].dates.start.localDate;
           eventName7=data._embedded.events[6].name;
           venue7= data._embedded.events[6]._embedded.venues[0].name;
-          date8= data._embedded.events[7].dates.start.localDate;
-          eventName8=data._embedded.events[7].name;
-          venue8= data._embedded.events[7]._embedded.venues[0].name;
+        
           setEventInfo();
         })
       })
@@ -58,7 +56,7 @@ function setEventInfo(){
     document.getElementById('event5').innerHTML=eventName5 + date5 + venue5;
     document.getElementById('event6').innerHTML=eventName6 + date6 + venue6;
     document.getElementById('event7').innerHTML=eventName7 + date7 + venue7;
-    document.getElementById('event8').innerHTML=eventName8 + date8 + venue8;
+
 
 }
 
