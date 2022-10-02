@@ -5,10 +5,8 @@ body {
  main{
    overflow: hidden;
 }
-#box{
-
+#box {
   height: 500px;
   width: 1000px;
   overflow-x: scroll;
-  }
-  
+}
