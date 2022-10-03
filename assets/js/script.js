@@ -1,10 +1,42 @@
+
 //trending artists//
+
+
+const $artistDetails = document.getElementById('artist-details');
+// API for the artist background.
+// var $btn = document.getElementById("search"); // btn
+// const $inputValEl = document.getElementById("search-input"); // input value
+// const $inputEl = document.getElementById("") // where the artist background page will load 
+searchBtn.addEventListener('click', addSearchToLocalStorage);
+function addSearchToLocalStorage(searchInput){
+    searchArray.push(searchInput);
+    localStorage.setItem('searchArray', JSON.stringify(searchArray));
+}
+console.log(searchArray);
+function getEventInfo(){
+    fetch(`https://app.ticketmaster.com/discovery/v2/events.json?&classificationName=concert,music&sort=onSaleStartDate,asc&apikey=${ticketMasterKey}`)
+    .then((res) =>{
+        res.json().then((data) => {
+            console.log(data);
+            date = data._embedded.events[0].dates.start.localDate;
+            eventName=data._embedded.events[0].name;
+            venue= data._embedded.events[0]._embedded.venues[0].name;
+            console.log(date, eventName, venue);
+            setEventInfo();
+        })
+    })
+}
+getEventInfo();
+// Trev Code
+const trendname = document.querySelectorAll(".trendArt");
+
+// const $search = document.querySelector("#search").value;
+
  function trendingArtist() {
   const $search = document.querySelector("#search-input").value;
    fetch(
     "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.artists.get?country=US&page_size=10&apikey=bd82708062a53880d8766141cccacee6"
-  )
-    .then((response) => response.json())
+  ).then((response) => response.json())
     .then(function (data) {
       console.log(data);
       for (var i = 0; i < 10; i++) {
@@ -52,8 +84,34 @@ function clickToNewPage(){
   document.location.href="about.html";
 }
 
+function setEventInfo(){
+    document.getElementById('event1').innerHTML=eventName + date + venue;
+    
+}
+
 
 //api get event info
+
+// // API for the artist background.
+//  var $btn = document.getElementById("search"); // btn
+// const $inputValEl = document.getElementById(""); // input value
+// const $inputEl = document.getElementById("") // where the artist background page will load 
+
+function getArtistBackground() {
+    let searchInput = document.getElementById('search-input').value;
+    console.log(searchInput)
+    fetch(`https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&=${searchInput}&api_key=c530cc7409dd0b36d399647084a9eae3&format=json`)
+    .then(function (data) {
+        console.log(data);
+        return data.json();
+    })
+  .then(function (response) {
+    var artistName = response.artist.name;
+    $artistDetails.innerHTML = artistName
+  });
+
+}
+
 function getEventInfo(){
     fetch(`https://app.ticketmaster.com/discovery/v2/events.json?&classificationName=music&sort=random&apikey=${ticketMasterKey}`)
     .then((res) =>{
@@ -87,6 +145,7 @@ function getEventInfo(){
     }
     getEventInfo();
 
+
 //api set event info
 function setEventInfo(){
   document.getElementById('event1').innerHTML=eventName + `<br></br>` + date + `<br></br>` + venue;
@@ -106,3 +165,56 @@ searchBtn.addEventListener('click', getArtistPage);
     window.location.href="./assets/about.html";
     localStorage.setItem('searchTerm', searchTerm);
               }
+
+
+}
+
+searchBtn.append($artistDetails);
+
+
+
+// var displayArtistBackground = function ($inputValEl) {
+//     if ($inputValEl.length === 0) {
+//       $inputEl.textContent = 'No repositories found.';
+//       return;
+//     }
+//   }
+
+// getArtistBackground();
+// $btn.addEventListener("click", getArtistBackground);
+getArtistBackground();
+searchBtn.addEventListener("click", getArtistBackground);
+$btn.addEventListener("click", getArtistBackground());
+// // API for the artist background.
+//  var $btn = document.getElementById("search"); // btn
+// const $inputValEl = document.getElementById(""); // input value
+// const $inputEl = document.getElementById("") // where the artist background page will load 
+
+// function getArtistBackground() {
+//     let $artistBackgroundAPI =
+//       `https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${$inputValEl}&api_key=c530cc7409dd0b36d399647084a9eae3&format=json`
+//   fetch($artistBackgroundAPI)
+//   .then(function (data) {
+//     console.log(data);
+//     return data.json();
+//   })
+//   .then(function (response) {
+//     var artistName = response.artist.name;
+//     console.log(artistName);
+//   });
+// }
+
+// var displayArtistBackground = function ($inputValEl) {
+//     if ($inputValEl.length === 0) {
+//       $inputEl.textContent = 'No repositories found.';
+//       return;
+//     }
+//   }
+
+// getArtistBackground();
+// $btn.addEventListener("click", getArtistBackground);
+// getArtistBackground();
+// $btn.addEventListener("click", getArtistBackground);
+
+
+
