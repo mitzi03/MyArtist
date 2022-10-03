@@ -1,4 +1,7 @@
 
+//trending artists//
+
+
 const $artistDetails = document.getElementById('artist-details');
 // API for the artist background.
 // var $btn = document.getElementById("search"); // btn
@@ -28,7 +31,9 @@ getEventInfo();
 const trendname = document.querySelectorAll(".trendArt");
 
 // const $search = document.querySelector("#search").value;
+
  function trendingArtist() {
+  const $search = document.querySelector("#search-input").value;
    fetch(
     "https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/chart.artists.get?country=US&page_size=10&apikey=bd82708062a53880d8766141cccacee6"
   ).then((response) => response.json())
@@ -38,21 +43,20 @@ const trendname = document.querySelectorAll(".trendArt");
         let index = i;
           const artistName = data.message.body.artist_list[i].artist.artist_name;
           const artistId = data.message.body.artist_list[i].artist.artist_id;
-          let topAlbum=`<h3  style="font-size: 25px; text-align: center; padding: 5px; font-weight: 500;font-family: monospace;">${artistName}</h3><br>`;
+          let topAlbum=`<h3 style="font-size: 25px; text-align: center; padding: 5px; font-weight: 500">${artistName}</h3><br>`;
           fetch(
               `https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/artist.albums.get?artist_id=${artistId}&page_size=1&apikey=bd82708062a53880d8766141cccacee6`
               ).then((response) => response.json()).then(function (data) {
                   console.log(data);
-                  topAlbum += `<br><div style=""><h4>${data.message.body.album_list[0].album.album_name}</h4> `;
-                  topAlbum += `<br ><h4 style="font-family: fangsong;
+                  topAlbum += `<br><div ><h4>${data.message.body.album_list[0].album.album_name}</h4> `;
+                  topAlbum += `<br><h4 style="
                   background: green;
                   text-align: center;
                   font-weight: 600;
                   color: white;">${data.message.body.album_list[0].album.album_rating}</h4><br>`;
-                  topAlbum += `<h4>${data.message.body.album_list[0].album.album_release_date}</h4></div>`
-                
-                  trendname[index].setAttribute("style","display:block; justify-content:center;")
-                  trendname[index].innerHTML = topAlbum;
+                  const date = new Date(data.message.body.album_list[0].album.album_release_date)
+                  topAlbum += `<h4>${date}</h4></div>`
+                  document.querySelectorAll(".trendArt")[index].innerHTML = topAlbum;
                 });
                 }
     })
@@ -61,7 +65,7 @@ const trendname = document.querySelectorAll(".trendArt");
     });
 }
 trendingArtist();
-// trev code
+
 
 // API for the artist background.
 var $btn = document.getElementById("search"); // btn
@@ -75,23 +79,18 @@ let searchBtn=document.getElementById('searchBtn');
 let searchInput = document.querySelector('#search-input');
 let searchArray=[];
 searchArray=document.getElementById('searchBtn');
-// API for the artist background.
 
-//  var $btn = document.getElementById("search"); // btn
-// const $inputValEl = document.getElementById("search-input"); // input value
-// const $inputEl = document.getElementById("") // where the artist background page will load 
 function clickToNewPage(){
   document.location.href="about.html";
 }
- var $btn = document.getElementById("search"); // btn
-const $inputValEl = document.getElementById("search-input"); // input value
-const $inputEl = document.getElementById(""); // where the artist background page will load
-
 
 function setEventInfo(){
     document.getElementById('event1').innerHTML=eventName + date + venue;
     
 }
+
+
+//api get event info
 
 // // API for the artist background.
 //  var $btn = document.getElementById("search"); // btn
@@ -112,8 +111,9 @@ function getArtistBackground() {
   });
 
 }
+
 function getEventInfo(){
-    fetch(`https://app.ticketmaster.com/discovery/v2/events.json?&classificationName=concert,music&sort=onSaleStartDate,asc&apikey=${ticketMasterKey}`)
+    fetch(`https://app.ticketmaster.com/discovery/v2/events.json?&classificationName=music&sort=random&apikey=${ticketMasterKey}`)
     .then((res) =>{
         res.json().then((data) => {
           console.log(data);
@@ -138,22 +138,33 @@ function getEventInfo(){
           date7 = data._embedded.events[6].dates.start.localDate;
           eventName7=data._embedded.events[6].name;
           venue7= data._embedded.events[6]._embedded.venues[0].name;
-        
+  
           setEventInfo();
         })
       })
     }
     getEventInfo();
-    
-function setEventInfo(){
-    document.getElementById('event1').innerHTML=eventName + date + venue;
-    document.getElementById('event2').innerHTML=eventName2 + date2 + venue2;
-    document.getElementById('event3').innerHTML=eventName3 + date3 + venue3;
-    document.getElementById('event4').innerHTML=eventName4 + date4 + venue4;
-    document.getElementById('event5').innerHTML=eventName5 + date5 + venue5;
-    document.getElementById('event6').innerHTML=eventName6 + date6 + venue6;
-    document.getElementById('event7').innerHTML=eventName7 + date7 + venue7;
 
+
+//api set event info
+function setEventInfo(){
+  document.getElementById('event1').innerHTML=eventName + `<br></br>` + date + `<br></br>` + venue;
+  document.getElementById('event2').innerHTML=eventName2 + `<br></br>` + date2 + `<br></br>` + venue2;
+  document.getElementById('event3').innerHTML=eventName3 + `<br></br>`+date3 +`<br></br>` + venue3;
+  document.getElementById('event4').innerHTML=eventName4 +`<br></br>` + date4 +`<br></br>`+ venue4;
+  document.getElementById('event5').innerHTML=eventName5 +`<br></br>`+ date5 +`<br></br>`+ venue5;
+  document.getElementById('event6').innerHTML=eventName6 +`<br></br>`+ date6 `<br></br>`+ venue6;
+  document.getElementById('event7').innerHTML=eventName7 +`<br></br>`+ date7 +`<br></br>`+ venue7;
+}
+
+//search button//
+searchBtn.addEventListener('click', getArtistPage);
+  async function getArtistPage(buttonSearchTerm){
+    searchTerm = searchInput.value
+    console.log(searchTerm);
+    window.location.href="./assets/about.html";
+    localStorage.setItem('searchTerm', searchTerm);
+              }
 
 
 }
@@ -206,17 +217,4 @@ $btn.addEventListener("click", getArtistBackground());
 // $btn.addEventListener("click", getArtistBackground);
 
 
-// // /THIS IS SO WE CAN DO THE HAMBURGER MENU MAYBE//
-// document.addEventListener("DOMContentLoaded", () => {
-//   document.getElementById("toggle-navbar").addEventListener("click", () => {
-//     const element = document.getElementById("nav-items");
-//     if (element.classList.contains("block")) {
-//       element.classList.remove("block");
-//       element.classList.add("hidden");
-//     } else {
-//       element.classList.remove("hidden");
-//       element.classList.add("block");
-//     }
-//   });
-// });
-//ABOVE IS HAMBURGER MENU
+

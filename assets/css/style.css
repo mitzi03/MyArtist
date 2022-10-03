@@ -6,9 +6,17 @@ body {
    overflow: hidden;
 }
 #box{
-
   height: 500px;
   width: 1000px;
   overflow-x: scroll;
   }
   
+#artist-name{
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  #nav-bar {
+    display: none;
+  }
+}
