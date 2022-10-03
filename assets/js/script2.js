@@ -10,7 +10,7 @@ function getSearchTermFromLocalStorage(){
 
 
 //skylars code//
-  function getArtistBackground() {
+function getArtistBackground() {
     let searchTerm = localStorage.getItem('searchTerm');
     console.log(searchTerm);
     let $artistBackgroundAPI =
